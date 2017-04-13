@@ -52,10 +52,10 @@ test:
 
 production:
   adapter:  postgresql
-  host:     ec2-107-20-193-74.compute-1.amazonaws.com
+  host:     ec2-107-20-195-181.compute-1.amazonaws.com
   encoding: unicode
-  database: d4bmkirb1bm50m
+  database: de6kgn6at5hvpe
   pool:     5
-  username: gmcieqhhbbrzph
-  password: aad9b2cfd3a37cd71286f5864376abebe0d4c0b3d2c2e46091026eaf7824528b
+  username: gbqhibghtphgni
+  password: 52d439f0f2b2f4840e147fc9d0d2159f4a438ab5f0483acef65dbf15842e4976
   template: template0
