@@ -35,7 +35,6 @@ db/*.sqlite3
 /coverage/
 /db/*.javadb/
 /db/*.sqlite3
-/db/schema.rb
 /doc/api/
 /doc/app/
 /doc/features.html
@@ -84,3 +83,6 @@ pickle-email-*.html
 
 # tilde files are usually backup files from a text editor
 *~
+
+# Docker ignore
+docker-compose.yml
