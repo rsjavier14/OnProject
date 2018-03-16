@@ -3,7 +3,6 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-ruby '2.2.6'
 gem 'rails', '~> 5.0.1'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -25,6 +24,7 @@ gem "mini_magick"
 gem "audited", "~> 4.4"
 gem 'enumerize'
 gem "i18n-js"
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -32,7 +32,6 @@ group :development do
   gem 'fog'
   gem 'web-console', '>= 3.3.0'
 end
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
