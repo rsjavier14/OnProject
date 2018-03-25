@@ -4,6 +4,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 gem 'rails', '~> 5.0.1'
+gem 'pg', '~> 0.20.0'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '~> 3.1.4'
@@ -35,7 +36,6 @@ end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
-gem 'pg'
 gem "breadcrumbs_on_rails"
 # gem para validaciones
 gem 'client_side_validations'
