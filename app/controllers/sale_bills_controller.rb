@@ -3,6 +3,13 @@ class SaleBillsController < ApplicationController
   before_action :set_sale_bill, only: [:show, :edit, :update, :destroy]
   before_action :load_permissions
   authorize_resource
+  before_action :setup_menu, only: [:index]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :invoice
+    @menu_setup[:side_menu] = :sale_bills_sidemenu
+  end
 
   # GET /sale_bills
   # GET /sale_bills.json

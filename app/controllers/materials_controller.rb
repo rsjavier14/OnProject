@@ -4,6 +4,13 @@ class MaterialsController < ApplicationController
   before_action :set_material, only: [:show, :edit, :update, :destroy]
   before_action :load_permissions
   authorize_resource
+  before_action :setup_menu, only: [:index]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :rubro_stock
+    @menu_setup[:side_menu] = :materials_sidemenu
+  end
 
   def search
     @materilas = Material.where('name ILIKE ?', "%#{params[:q][:term]}%")

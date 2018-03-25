@@ -1,0 +1,143 @@
+  menu:
+    person:
+      text: "Personas"
+      url: "#"
+      icon: "street-view"
+      active_menu: :person
+      submenus:
+        clients:
+          text: "Clientes"
+          url: :clients
+          icon: "users"
+          role: "Client"
+          active_submenu: :clients_sidemenu
+        providers:
+          text: "Proveedores"
+          url: :providers
+          icon: "truck"
+          role: "Provider"
+          active_submenu: :providers_sidemenu
+        employees:
+          text: "Empleados"
+          url: :employees
+          icon: "male"
+          role: "Employee"
+          active_submenu: :employees_sidemenu
+        account_employees:
+          text: "Cta. cte. jornalero"
+          url: :account_employees
+          icon: "check"
+          role: "AccountEmployee"
+          active_submenu: :account_employees_sidemenu
+    rubro_stock:
+      text: "Rubros y Stock"
+      url: "#"
+      icon: "book"
+      active_menu: :rubro_stock
+      submenus:
+        rubros:
+          text: "Rubros"
+          url: :rubros
+          icon: "check"
+          role: "Rubro"
+          active_submenu: :rubros_sidemenu
+        services:
+          text: "Servicios"
+          url: :services
+          icon: "file-text"
+          role: "Service"
+          active_submenu: :services_sidemenu
+        materials:
+          text: "Materiales"
+          url: :materials
+          icon: "book"
+          role: "Material"
+          active_submenu: :materials_sidemenu
+        material_movements:
+          text: "Movimiento de Materiales"
+          url: :material_movements
+          icon: "exchange"
+          role: "MaterialMovement"
+          active_submenu: :material_movements_sidemenu
+    invoice:
+      text: "Facturación"
+      url: "#"
+      icon: "list-alt"
+      active_menu: :invoice
+      submenus:
+        users:
+          text: "Facturas de Compra"
+          url: :purchase_bills
+          icon: "list-alt"
+          role: "PurchaseBill"
+          active_submenu: :purchase_bills_sidemenu
+        roles:
+          text: "Factura de Venta"
+          url: :sale_bills
+          icon: "list-alt"
+          role: "SaleBill"
+          active_submenu: :sale_bills_sidemenu
+    contract:
+      text: "Contratos"
+      url: "#"
+      icon: "file-text"
+      active_menu: :contract
+      submenus:
+        budgets:
+          text: "Presupuestos"
+          url: :budgets
+          icon: "calculator"
+          role: "Budget"
+          active_submenu: :budgets_sidemenu
+        contracts:
+          text: "Contratos"
+          url: :contracts
+          icon: "file-text"
+          role: "Contract"
+          active_submenu: :contracts_sidemenu
+        certifications:
+          text: "Certificaciones Internas"
+          url: :certifications
+          icon: "check"
+          role: "Certification"
+          active_submenu: :certifications_sidemenu
+        client_certifications:
+          text: "Certificaciones Externas"
+          url: :client_certifications
+          icon: "check"
+          role: "ClientCertification"
+          active_submenu: :client_certifications_sidemenu
+    reports:
+      text: "Reportes"
+      url: :reports
+      icon: "pie-chart"
+      active_menu: :reports
+    audit:
+      text: "Log de Auditoría"
+      url: :audit
+      icon: "bars"
+      active_menu: :audit
+    config:
+      text: "Configuracion"
+      url: "#"
+      icon: "cogs"
+      active_menu: :config
+      submenus:
+        users:
+          text: "Usuarios"
+          url: :users
+          icon: "check"
+          role: "User"
+          active_submenu: :users_sidemenu
+        roles:
+          text: "Roles"
+          url: :roles
+          icon: "lock"
+          role: "Role"
+          active_submenu: :roles_sidemenu
+        company:
+          text: "Empresa"
+          url: :company_config
+          icon: "gears"
+          role: "CompanyConfig"
+          active_submenu: :company_sidemenu

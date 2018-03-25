@@ -4,6 +4,13 @@ class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
   before_action :load_permissions
   authorize_resource
+  before_action :setup_menu, only: [:index]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :person
+    @menu_setup[:side_menu] = :employees_sidemenu
+  end
 
   def search
     @employees = Employee.where('name ILIKE ?', "%#{params[:q][:term]}%")

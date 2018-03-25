@@ -4,6 +4,13 @@ class PurchaseBillsController < ApplicationController
   before_action :set_purchase_bill, only: [:show, :edit, :update, :destroy]
   before_action :load_permissions
   authorize_resource
+  before_action :setup_menu, only: [:index]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :invoice
+    @menu_setup[:side_menu] = :purchase_bills_sidemenu
+  end
 
   def index
     get_purchases

@@ -4,6 +4,13 @@ class RolesController < ApplicationController
   before_action :set_role, only: [:show, :edit, :update, :destroy]
   before_action :load_permissions
   authorize_resource
+  before_action :setup_menu, only: [:index]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :config
+    @menu_setup[:side_menu] = :roles_sidemenu
+  end
 
   def index
     get_roles

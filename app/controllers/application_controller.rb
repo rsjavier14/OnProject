@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   before_action :authenticate_user!
+  before_action :set_menu_config
   protect_from_forgery prepend: true, with: :exception
 
   helper_method :find_user
@@ -25,6 +26,12 @@ class ApplicationController < ActionController::Base
 
   def find_user(id)
     User.find(id)
+  end
+
+  def set_menu_config
+    @menu_setup = Hash.new
+    @menu_setup[:main_menu] = nil
+    @menu_setup[:side_menu] = nil
   end
 
   protected

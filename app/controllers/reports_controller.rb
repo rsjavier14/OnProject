@@ -1,6 +1,12 @@
 class ReportsController < ApplicationController
   add_breadcrumb I18n.t('helpers.breadcrumbs.reports.index'), :budgets_path
+  before_action :setup_menu, only: [:index]
 
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :reports
+    @menu_setup[:side_menu] = nil
+  end
   def index
 
   end

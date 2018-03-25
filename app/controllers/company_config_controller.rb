@@ -3,6 +3,13 @@ class CompanyConfigController < ApplicationController
 
   before_action :load_permissions
   authorize_resource
+  before_action :setup_menu, only: [:edit_company]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :config
+    @menu_setup[:side_menu] = :company_sidemenu
+  end
 
   def edit_company
     @company_config = CompanyConfig.first

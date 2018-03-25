@@ -4,6 +4,13 @@ class ClientCertificationsController < ApplicationController
   before_action :set_client_certification, only: [:show, :edit, :update, :destroy]
   before_action :load_permissions
   authorize_resource
+  before_action :setup_menu, only: [:index]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :contract
+    @menu_setup[:side_menu] = :client_certificacions_sidemenu
+  end
 
   # GET /client_certifications
   # GET /client_certifications.json

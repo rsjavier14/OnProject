@@ -1,9 +1,14 @@
 class AccountEmployeesController < ApplicationController
   add_breadcrumb I18n.t('helpers.breadcrumbs.account_employee.index'), :account_employees_path
   before_action :set_account_employee, only: [:show, :edit, :update, :destroy]
+  before_action :setup_menu, only: [:index]
+  
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :person
+    @menu_setup[:side_menu] = :account_employees_sidemenu
+  end
 
-  # GET /account_employees
-  # GET /account_employees.json
   def index
     get_account_employees
   end

@@ -1,6 +1,14 @@
 class AuditController < ApplicationController
   before_action :load_permissions
   authorize_resource
+  before_action :setup_menu, only: [:index]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :audit
+    @menu_setup[:side_menu] = nil
+  end
+
   def index
     add_breadcrumb I18n.t('helpers.breadcrumbs.audits')
     get_audits

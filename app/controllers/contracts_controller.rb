@@ -4,6 +4,13 @@ class ContractsController < ApplicationController
   before_action :set_contract, only: [:show, :edit, :update, :destroy]
   before_action :load_permissions
   authorize_resource
+  before_action :setup_menu, only: [:index]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :contract
+    @menu_setup[:side_menu] = :contracts_sidemenu
+  end
 
   def search
     @contracts = Contract.where('name ILIKE ?', "%#{params[:q][:term]}%")

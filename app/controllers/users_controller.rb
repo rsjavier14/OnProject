@@ -5,6 +5,13 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :load_permissions
   authorize_resource except: [:edit_profile, :update_profile]
+  before_action :setup_menu, only: [:index]
+  
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :config
+    @menu_setup[:side_menu] = :users_sidemenu
+  end
 
   def index
     get_users

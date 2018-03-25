@@ -3,6 +3,13 @@ class RubrosController < ApplicationController
   before_action :load_permissions
   authorize_resource
   add_breadcrumb I18n.t('helpers.breadcrumbs.rubros.index'), :rubros_path
+  before_action :setup_menu, only: [:index]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :rubro_stock
+    @menu_setup[:side_menu] = :rubros_sidemenu
+  end
 
   def search
     @rubros = Rubro.where('name ILIKE ?', "%#{params[:q][:term]}%")

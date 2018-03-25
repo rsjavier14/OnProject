@@ -3,6 +3,13 @@ class CertificationsController < ApplicationController
   before_action :set_certification, only: [:show, :edit, :update]
   before_action :load_permissions
   authorize_resource
+  before_action :setup_menu, only: [:index]
+
+  # configuracion del menu
+  def setup_menu
+    @menu_setup[:main_menu] = :contract
+    @menu_setup[:side_menu] = :certifications_sidemenu
+  end
 
   def index
     get_certifications
